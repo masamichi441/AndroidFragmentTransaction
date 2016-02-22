@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 public class FragmentB extends Fragment {
-    private static final String TAG = FragmentB.class.getSimpleName();
+    static final String TAG = FragmentB.class.getSimpleName();
 
     @Nullable
     @Override
@@ -22,7 +22,7 @@ public class FragmentB extends Fragment {
         View view = inflater.inflate(R.layout.fragment_layout, null);
 
         TextView textView = (TextView) view.findViewById(R.id.text_view);
-        textView.setText("Fragment B");
+        textView.setText(TAG);
 
         Resources resources = getResources();
         int color = resources.getColor(android.R.color.holo_green_light);
@@ -33,10 +33,8 @@ public class FragmentB extends Fragment {
             public void onClick(View v) {
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction xact = fragmentManager.beginTransaction();
-
                 Fragment fragment = new FragmentC();
-                xact.replace(R.id.fragment_area, fragment, "FragmentC");
-
+                xact.replace(R.id.fragment_area, fragment, FragmentC.TAG);
                 xact.commit();
 
                 Log.d(TAG, "B --> C");

@@ -18,7 +18,7 @@ public class MainActivity extends Activity {
         FragmentTransaction xact = fragmentManager.beginTransaction();
 
         Fragment fragment = new FragmentA();
-        xact.replace(R.id.fragment_area, fragment);
+        xact.replace(R.id.fragment_area, fragment, FragmentA.TAG);
         xact.commit();
     }
 

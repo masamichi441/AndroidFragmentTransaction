@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 public class FragmentC extends Fragment {
-    private static final String TAG = FragmentC.class.getSimpleName();
+    static final String TAG = FragmentC.class.getSimpleName();
 
     @Nullable
     @Override
@@ -22,7 +22,7 @@ public class FragmentC extends Fragment {
         View view = inflater.inflate(R.layout.fragment_layout, null);
 
         TextView textView = (TextView) view.findViewById(R.id.text_view);
-        textView.setText("Fragment C");
+        textView.setText(TAG);
 
         Resources resources = getResources();
         int color = resources.getColor(android.R.color.holo_blue_light);
